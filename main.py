@@ -2,7 +2,7 @@ import asyncio, os, discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
-# utilities folder
+# utilities
 from client import command_handler, event_handler
 
 load_dotenv() # load variables from .env into the system environment
