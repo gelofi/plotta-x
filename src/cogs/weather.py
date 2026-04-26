@@ -6,7 +6,7 @@ import requests
 # weather information fetcher
 async def weather(city: str):
     try:
-        res = requests.get(f'https://geocoding-api.open-meteo.com/v1/search?name={city}').json()
+        res = requests.get(f'https://geocoding-api.open-meteo.com/v1/search?name={city}')
         data = res.json()
         if res.status_code == 200:
             place = data['results'][0]['name']
@@ -44,7 +44,7 @@ class Weather(commands.Cog):
             weather_embed.add_field(name='Humidity', value=humidity, inline=False)
             weather_embed.add_field(name='Wind speed', value=wind_speed, inline=False)
             weather_embed.add_field(name='Surface pressure', value=surface_pressure, inline=False)
-            weather_embed.set_footer(text='Open-Meteo API <3')
+            weather_embed.set_footer(text='Uses Open-Meteo API <3')
             await interaction.response.send_message(embed=weather_embed)
         else :
             error_embed = discord.Embed(
