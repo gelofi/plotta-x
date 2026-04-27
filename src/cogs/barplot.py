@@ -45,5 +45,6 @@ class Bargraph(commands.Cog):
             )
             await interaction.response.send_message(embed=error_embed, ephemeral=True)
             print("Error in making a bar graph. ", e)
+
 async def setup(bot):
     await bot.add_cog(Bargraph(bot))

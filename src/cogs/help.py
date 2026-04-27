@@ -11,7 +11,7 @@ class Help(commands.Cog):
     @app_commands.command(name='help', description='Gives a list of all the commands available.')
     async def help(self, interaction: discord.Interaction):
         help_embed = discord.Embed(
-            title='Plotta v2.1',
+            title='Plotta v4.1',
             description=f'Thank you for using Plotta. You may visit the repository [here]({github}), or add Plotta to your server [here]({link}).',
             color=discord.Color.blue(),
         )
