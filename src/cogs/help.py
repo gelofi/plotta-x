@@ -8,15 +8,16 @@ class Help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @app_commands.command(name='help', description='Gives a list of all the commands available.')
+    @app_commands.command(name='help', description='Gives a list of all graphing tools available.')
     async def help(self, interaction: discord.Interaction):
         help_embed = discord.Embed(
-            title='Plotta v4.1',
+            title='Plotta v5.1 - Graphing Toolset',
             description=f'Thank you for using Plotta. You may visit the repository [here]({github}), or add Plotta to your server [here]({link}).',
             color=discord.Color.blue(),
         )
         for command in self.bot.tree.get_commands():
-            help_embed.add_field(name=command.name, value=command.description, inline=False)
+            if command.description.__contains__('matplotlib'):
+                help_embed.add_field(name=command.name, value=command.description, inline=False)
 
         await interaction.response.send_message(embed=help_embed)
 
