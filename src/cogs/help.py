@@ -11,8 +11,8 @@ class Help(commands.Cog):
     @app_commands.command(name='help', description='Gives a list of all graphing tools available.')
     async def help(self, interaction: discord.Interaction):
         help_embed = discord.Embed(
-            title='Plotta v5.2 - Graphing Toolset',
-            description=f'Thank you for using Plotta. You may visit the repository [here]({github}), or add Plotta to your server [here]({link}).',
+            title='Plotta-X v5.2 - Graphing Toolset',
+            description=f'Thank you for using Plotta-X. You may visit the repository [here]({github}), or add Plotta to your server [here]({link}).',
             color=discord.Color.blue(),
         )
         for command in self.bot.tree.get_commands():
