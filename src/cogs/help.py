@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 link = 'https://discord.com/oauth2/authorize?client_id=1497873742502690867&permissions=5066826606570560&integration_type=0&scope=bot'
-github = 'https://github.com/gelofi/plotta'
+github = 'https://github.com/gelofi/plotta-x'
 
 class Help(commands.Cog):
     def __init__(self, bot):
