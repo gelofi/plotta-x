@@ -26,6 +26,7 @@ class Piechart(commands.Cog):
             plt.pie(x, labels=y, startangle=90, autopct=show_pct, shadow=shadow, colors=colors_set)
             if legend is not None:
                 plt.legend(title=legend)
+                plt.axis('equal')
             plt.title(title)
             # generate the pie chart as image
             with io.BytesIO() as image_binary:

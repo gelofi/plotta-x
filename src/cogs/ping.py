@@ -8,7 +8,11 @@ class Ping(commands.Cog):
 
     @app_commands.command(name='ping', description='Returns the bot\'s latency.')
     async def ping(self, interaction: discord.Interaction):
-        ping_embed = discord.Embed(title='Pong!', description=f'{round(self.bot.latency * 1000)}ms', color=discord.Color.blue())
+        ping_embed = discord.Embed(
+            title='Pong!',
+            description=f'Plotta has a latency of {round(self.bot.latency * 1000)}ms.',
+            color=discord.Color.blue()
+        )
         await interaction.response.send_message(embed=ping_embed)
 
 async def setup(bot):
