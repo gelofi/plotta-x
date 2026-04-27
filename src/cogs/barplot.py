@@ -1,5 +1,4 @@
 import discord, io
-from typing import Literal
 from discord import app_commands
 import matplotlib.pyplot as plt
 import numpy as np
@@ -12,14 +11,14 @@ class Bargraph(commands.Cog):
     @app_commands.command(name='bargraph', description='Plot a bar graph using matplotlib.')
     @app_commands.describe(title='The title of this bar graph.')
     @app_commands.describe(description='Describe what this graph is for.')
-    @app_commands.describe(names='X Axis: The entities we\'re comparing!')
-    @app_commands.describe(values='Y Axis: The values of the entities we\'re comparing.')
+    @app_commands.describe(names='X Axis: The entities we\'re comparing! Separated by [,] comma.')
+    @app_commands.describe(values='Y Axis: The values of the entities we\'re comparing. Separated by [,] comma.')
     @app_commands.describe(grid='Adds a grid to the graph.')
     async def bargraph(self, interaction: discord.Interaction, title: str, description: str, names: str, values: str, grid: bool):
         try:
             plt.figure()
-            x = np.array(list(names.split(',')))
-            y = np.array(list(map(float, values.split(','))))
+            x = np.array(list(names.replace(', ', ',').split(',')))
+            y = np.array(list(map(float, values.replace(', ', ',').split(','))))
             plt.bar(x, y)
             plt.grid(grid)
             plt.title(title)

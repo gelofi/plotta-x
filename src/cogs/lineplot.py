@@ -26,8 +26,8 @@ class Lineplot(commands.Cog):
     ])
     async def lineplot(self, interaction: discord.Interaction, title: str,  description: str, x_label: str, y_label: str, x_interval: str, y_interval: str,marker: app_commands.Choice[str], linestyle: Literal['solid', 'dashed', 'dashdot', 'dotted'], color: Literal['red', 'orange', 'yellow', 'green', 'blue', 'purple'], grid: bool):
         try:
-            x = np.array(list(map(float, x_interval.split(","))))
-            y = np.array(list(map(float, y_interval.split(","))))
+            x = np.array(list(map(float, x_interval.replace(', ', ',').split(","))))
+            y = np.array(list(map(float, y_interval.replace(', ', ',').split(","))))
             plt.figure() # create the plot
             plt.xlabel(x_label)
             plt.ylabel(y_label)

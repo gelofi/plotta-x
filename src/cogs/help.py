@@ -1,4 +1,4 @@
-import discord, os
+import discord
 from discord import app_commands
 from discord.ext import commands
 link = 'https://discord.com/oauth2/authorize?client_id=1497873742502690867&permissions=5066826606570560&integration_type=0&scope=bot'
@@ -17,6 +17,7 @@ class Help(commands.Cog):
         )
         for command in self.bot.tree.get_commands():
             help_embed.add_field(name=command.name, value=command.description, inline=False)
+
         await interaction.response.send_message(embed=help_embed)
 
 async def setup(bot):
