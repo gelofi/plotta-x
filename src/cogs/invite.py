@@ -7,7 +7,7 @@ class Invite(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @app_commands.command(name='invite', description='Get an invite link for Plotta,')
+    @app_commands.command(name='invite', description='Get an invite link for Plotta.')
     async def invite(self, interaction: discord.Interaction):
         invite = discord.Embed(
             title='Invite Plotta',
